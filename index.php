@@ -14,7 +14,7 @@
     </header>
     
     <h1>Inicio de sesión</h1>
-    <form action="Materias/Pages/index.php" method="POST">
+    <form action="Usuarios/Controladores/login.php" method="POST">
         Usuario<br/>
         <input type="text" name="Usuario" placeholder="User" required="" autocomplete="off" ><br>
         Contraseña <br>

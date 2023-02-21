@@ -8,7 +8,7 @@ class conection{
      private $bd="notes";
      private $password="";
 
-    
+  
      public function validar(){
        try {
         $options = [
@@ -16,8 +16,7 @@ class conection{
         ];
         $db=new PDO("{$this->driver}:host={$this->host};dbname={$this->bd}",$this->usuario,$this->password,$options);
         return $db;
-
-
+        
        } catch (PDOException $e) {
         echo("ha ocurrido un error".$e->getMessage());
        
