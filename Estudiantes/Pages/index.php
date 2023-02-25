@@ -45,7 +45,7 @@ $validarsession->validarSession();
         if($rows != null){
             foreach($rows as $rows){
 
-        }
+        
         ?>
         <tr>
             <td><?php echo($rows['ID']) ?></td>
@@ -58,12 +58,13 @@ $validarsession->validarSession();
             <td><?php echo($rows['Promedio']) ?></td>
             <td><?php echo($rows['Fecha']) ?></td>
             <td>
-                <a href="edit.php" target="_blank">Editar</a><br>
-                <a href="delete.php" target="_blank">Borrar</a>
+                <a href="edit.php? id=<?php echo($rows['ID']) ?>" target="_blank">Editar</a><br>
+                <a href="delete.php? id=<?php echo($rows['ID']) ?>" target="_blank">Borrar</a>
             </td>
         </tr>
 
         <?php 
+            }
         }
         ?>
 

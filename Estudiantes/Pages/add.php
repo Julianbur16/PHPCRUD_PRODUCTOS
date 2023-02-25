@@ -1,3 +1,13 @@
+<?php
+require_once("../../metodos_docentes_materias.php");
+
+$obj_docentes_materias=new Getdocentesmaterias;
+$nomdocentes=$obj_docentes_materias->getdocentes();
+$nommaterias=$obj_docentes_materias->getmaterias();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,18 +24,32 @@
         <input type="text" name="Apellido" placeholder="Apellido" require="" autocomplete="off"><br>
         <input type="text" name="Documento" placeholder="Documento" require="" autocomplete="off"><br>
         <input type="gmail" name="Gmail" placeholder="Gmail" require="" autocomplete="off"><br>
+
         <select name="Materia" required="">
             <option>Seleccione</option>
-            <option value="Español">Español</option>
-            <option value="Ingles">Ingles</option>
-            <option value="Matematicas">Matematicas</option>
+
+            <?php
+            if($nommaterias != null){
+                foreach($nommaterias as $nommaterias){
+                    ?> <option value="<?php echo($nommaterias['Nombre'])?>"><?php echo($nommaterias['Nombre'])?></option>
+                    <?php
+                }
+            }
+            ?>
         </select><br>
 
         <select name="Docente" required="">
             <option>Docente</option>
-            <option>Flavio Parra</option>
-            <option>Ignacio Caicedo</option>
-            <option>Carlos Moran</option>
+
+            <?php
+            if($nomdocentes != null){
+                foreach($nomdocentes as $nomdocentes){
+                    ?><option value="<?php echo($nomdocentes['Nombre']. " ". $nomdocentes['Apellido'])?>"><?php echo($nomdocentes['Nombre']. " ". $nomdocentes['Apellido'])?></option>
+
+                    <?php
+                }
+            }
+            ?>
         </select><br>
         <input type="number" name="Promedio" placeholder="Promedio" require="" autocomplete="off"><br>
         <input type="date" name="Fecha" require="" autocomplete="off"><br>

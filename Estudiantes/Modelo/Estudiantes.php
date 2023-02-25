@@ -21,7 +21,7 @@ class Estudiante extends conection{
         $statement->bindParam(":fecha",$fecha);
         
         if($statement->execute()){
-            header("Location: ../Pages/index");
+            header("Location: ../Pages/index.php");
         }else{
             header("Location: ../Pages/add.php");
         }
@@ -39,7 +39,7 @@ class Estudiante extends conection{
 
     public function getByid($id){
         $rows= null;
-        $statement=$this->db->prepare("SELECT * FROM Estudiantes WHERE ID = :di");
+        $statement=$this->db->prepare("SELECT * FROM Estudiantes WHERE ID = :id");
         $statement->bindParam(':id',$id);
         $statement->execute();
         while($result=$statement->fetch()){
@@ -62,7 +62,8 @@ class Estudiante extends conection{
 
     public function update($id, $nombre, $apellido,$documento,$correo,$materia,$docentes,$promedio,$fecha){
         $statement=$this->db->prepare("UPDATE Estudiantes SET Nombre = :nombre, Apellido=:apellido, Documento=:documento, Correo=:correo, Materia=:materia, Docentes=:docentes, Promedio=:promedio, Fecha=:fecha WHERE ID=:id");
-       
+
+        $statement->bindParam(":id",$id);
         $statement->bindParam(":nombre",$nombre);
         $statement->bindParam(":apellido",$apellido);
         $statement->bindParam(":documento",$documento);
@@ -71,9 +72,9 @@ class Estudiante extends conection{
         $statement->bindParam(":docentes",$docentes);
         $statement->bindParam(":promedio",$promedio);
         $statement->bindParam(":fecha",$fecha);
-        
+
         if($statement->execute()){
-            header("Location: ../Pages/index");
+            header("Location: ../Pages/index.php");
         }else{
             header("Location: ../Pages/edit.php");
         }
