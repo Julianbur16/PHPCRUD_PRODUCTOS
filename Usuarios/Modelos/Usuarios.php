@@ -46,6 +46,8 @@ class Usuarios extends conection{
         if($_SESSION["Id"] != null){
             if($_SESSION["Perfil" == "Docente"]){
                 header("Location: ../../Estudiantes/Pages/index.php");
+            }else{
+                header("Location: ../../index.php");
             }
         }
     }
