@@ -1,3 +1,13 @@
+<?php 
+require_once("../../Usuarios/Modelos/Usuarios.php");
+
+$validarsession=new Usuarios;
+
+$validarsession->validarSession();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,16 +19,12 @@
 <body>
     <h1>Registrar administrador</h1>
     <form action="../Controladores/add.php" method="POST">
-        <input type="hidden" name="id" value="">
+    
+        <input type="text" name="Usuario" placeholder="Usuario" require="" autocomplete="off"><br>
+        <input type="text" name="Password" placeholder="Password" require="" autocomplete="off"><br>
         <input type="text" name="Nombre" placeholder="Nombre" require="" autocomplete="off"><br>
         <input type="text" name="Apellido" placeholder="Apellido" require="" autocomplete="off"><br>
-        <input type="text" name="Usuario" placeholder="Usuario" require="" autocomplete="off"><br>
-        <input type="text" name="perfil" placeholder="Perfil" require="" autocomplete="off"><br>
-        <select name="Estado" id="">
-            <option>Estado</option>
-            <option>Activo</option>
-            <option>Inactivo</option>
-        </select><br>
+
         <input type="submit" value="REGISTRAR"><br>
     </form>
 

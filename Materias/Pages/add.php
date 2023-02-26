@@ -1,3 +1,15 @@
+<?php
+
+require_once("../../Usuarios/Modelos/Usuarios.php");
+
+
+$metodosestudents=new Usuarios;
+$metodosestudents->validarSession();
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

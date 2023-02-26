@@ -1,3 +1,17 @@
+<?php 
+require_once("../../Usuarios/Modelos/Usuarios.php");
+require_once("../Modelos/Materias.php");
+
+$metodosMaterias=new Materias;
+$validarsession=new Usuarios;
+
+$validarsession->validarSession();
+$names_materias=$metodosMaterias->get();
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,14 +33,25 @@
             <th>Nombre</th>
             <th>acciones</th>
         </tr>
+
+        <?php 
+        if($names_materias != null){
+            foreach($names_materias as $names_materias){
+
+        ?>
         <tr>
-            <td>1</td>
-            <td>Ciencias</td>
+            <td><?php echo($names_materias['ID'])?></td>
+            <td><?php echo($names_materias['Nombre'])?></td>
             <td>
-                <a href="edit.php" target="_blank">Editar</a><br>
-                <a href="delete.php" target="_blank">Borrar</a>
+                <a href="edit.php? id= <?php echo($names_materias['ID'])?>" target="_blank">Editar</a><br>
+                <a href="delete.php? id= <?php echo($names_materias['ID'])?>" target="_blank">Borrar</a>
             </td>
         </tr>
+
+        <?php 
+            }
+        }
+        ?>
     </table>
 </body>
 

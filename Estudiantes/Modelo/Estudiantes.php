@@ -54,7 +54,7 @@ class Estudiante extends conection{
         $statement->bindParam(':id',$id);
 
         if($statement->execute()){
-            header("Location: ../Pages/index");
+            header("Location: ../Pages/index.php");
         }else{
             header("Location: ../Pages/delete.php");
         }

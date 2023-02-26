@@ -1,3 +1,12 @@
+<?php
+
+require_once("../../Usuarios/Modelos/Usuarios.php");
+
+$metodosestudents=new Usuarios;
+$metodosestudents->validarSession();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +21,7 @@
     </header>
     <P>¿Estas seguro de eliminar esta Materia?</P><br><br>
     <form action="../Controladores/delete.php" method="POST">
+        <input type="hidden" name="id" value="<?php echo($_GET['id'])?>">
         <input type="submit" value="ELIMINAR">
     </form>
 </body>

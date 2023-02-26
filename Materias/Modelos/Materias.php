@@ -14,7 +14,7 @@ class Materias extends conection{
         $statement->bindParam(":nombre",$nombre);
         
         if($statement->execute()){
-            header("Location: ../Pages/index");
+            header("Location: ../Pages/index.php");
         }else{
             header("Location: ../Pages/add.php");
         }
@@ -32,7 +32,7 @@ class Materias extends conection{
 
     public function getByid($id){
         $rows= null;
-        $statement=$this->db->prepare("SELECT * FROM Materias WHERE ID = :di");
+        $statement=$this->db->prepare("SELECT * FROM Materias WHERE ID = :id");
         $statement->bindParam(':id',$id);
         $statement->execute();
         while($result=$statement->fetch()){
@@ -47,7 +47,7 @@ class Materias extends conection{
         $statement->bindParam(':id',$id);
      
         if($statement->execute()){
-            header("Location: ../Pages/index");
+            header("Location: ../Pages/index.php");
         }else{
             header("Location: ../Pages/delete.php");
         }
@@ -60,7 +60,7 @@ class Materias extends conection{
         $statement->bindParam(":id",$id);
    
         if($statement->execute()){
-            header("Location: ../Pages/index");
+            header("Location: ../Pages/index.php");
         }else{
             header("Location: ../Pages/edit.php");
         }

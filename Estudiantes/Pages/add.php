@@ -1,5 +1,9 @@
 <?php
 require_once("../../metodos_docentes_materias.php");
+require_once("../../Usuarios/Modelos/Usuarios.php");
+
+$metodosestudents=new Usuarios;
+$metodosestudents->validarSession();
 
 $obj_docentes_materias=new Getdocentesmaterias;
 $nomdocentes=$obj_docentes_materias->getdocentes();

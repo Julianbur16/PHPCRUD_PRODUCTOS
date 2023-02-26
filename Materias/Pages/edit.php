@@ -1,3 +1,19 @@
+<?php
+
+require_once("../../Usuarios/Modelos/Usuarios.php");
+require_once("../Modelos/Materias.php");
+
+$metodosestudents=new Usuarios;
+$metodosestudents->validarSession();
+
+$metodos_materias=new Materias;
+
+$namesByid=$metodos_materias->getByid($_GET['id']);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +25,17 @@
 <body>
     <h1>Editar Materia</h1>
     <form action="../Controladores/edit.php" method="POST">
-        <input type="hidden" name="id" value="">
-        <input type="text" name="Nombre" placeholder="Nombre" require="" autocomplete="off"><br>
+        <input type="hidden" name="id" value="<?php echo($_GET['id'])?>">
+        <?php 
+        if($namesByid != null){
+            foreach($namesByid as $namesByid){
+        ?>
+        <input type="text" name="Nombre" placeholder="Nombre" require="" autocomplete="off" value="<?php echo($namesByid['Nombre']) ?>"><br>
+
+        <?php
+            }
+        }
+        ?>
         <input type="submit" value="GUARDAR"><br>
     </form>
 

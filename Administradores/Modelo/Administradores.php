@@ -16,7 +16,7 @@ class Administradores extends conection{
         $statement->bindParam(":apellido",$apellido);
         
         if($statement->execute()){
-            header("Location: ../Pages/index");
+            header("Location: ../Pages/index.php");
         }else{
             header("Location: ../Pages/add.php");
         }
@@ -34,7 +34,7 @@ class Administradores extends conection{
 
     public function getByid($id){
         $rows= null;
-        $statement=$this->db->prepare("SELECT * FROM usuarios WHERE Perfil = 'Administrador' AND  ID = :di");
+        $statement=$this->db->prepare("SELECT * FROM usuarios WHERE Perfil = 'Administrador' AND  ID = :id");
         $statement->bindParam(':id',$id);
         $statement->execute();
         while($result=$statement->fetch()){
@@ -49,7 +49,7 @@ class Administradores extends conection{
         $statement->bindParam(':id',$id);
     
         if($statement->execute()){
-            header("Location: ../Pages/index");
+            header("Location: ../Pages/index.php");
         }else{
             header("Location: ../Pages/delete.php");
         }
@@ -63,7 +63,7 @@ class Administradores extends conection{
         $statement->bindParam(":apellido",$apellido);
         $statement->bindParam(':id',$id);
         if($statement->execute()){
-            header("Location: ../Pages/index");
+            header("Location: ../Pages/index.php");
         }else{
             header("Location: ../Pages/edit.php");
         }
