@@ -1,3 +1,13 @@
+<?php
+
+require_once("../../Usuarios/Modelos/Usuarios.php");
+
+
+$modelouser=new Usuarios;
+$modelouser->validarSession();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +22,7 @@
     </header>
     <P>¿Estas seguro de eliminar el Docente?</P><br><br>
     <form action="../Controladores/delete.php" method="POST">
+         <input type="hidden" name="id" value="<?php echo($_GET['id'])?>">
         <input type="submit" value="ELIMINAR">
     </form>
 </body>

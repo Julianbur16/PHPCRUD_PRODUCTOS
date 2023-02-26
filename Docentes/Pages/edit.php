@@ -1,3 +1,16 @@
+<?php 
+require_once("../../Usuarios/Modelos/Usuarios.php");
+require_once("../Modelo/Docentes.php");
+
+$metodo_Docente=new Docentes;
+$validarsession=new Usuarios;
+
+$validarsession->validarSession();
+$rowsDocente=$metodo_Docente->getByid($_GET['id']);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,17 +22,21 @@
 <body>
     <h1>Registrar Docentes</h1>
     <form action="../Controladores/edit.php" method="POST">
-        <input type="hidden" name="id" value="">
-        <input type="text" name="Nombre" placeholder="Nombre" require="" autocomplete="off"><br>
-        <input type="text" name="Apellido" placeholder="Apellido" require="" autocomplete="off"><br>
-        <input type="number" name="Celular" placeholder="Celular" require="" autocomplete="off"><br>
-        <input type="gmail" name="Gmail" placeholder="Gmail" require="" autocomplete="off"><br>
-        <select name="Materia" required="">
-            <option>Seleccione</option>
-            <option value="Español">Español</option>
-            <option value="Ingles">Ingles</option>
-            <option value="Matematicas">Matematicas</option>
-        </select><br>
+        <input type="hidden" name="id" value="<?php echo($_GET['id'])?>">
+        <?php
+        if($rowsDocente != null){
+            foreach($rowsDocente as $rowsDocente){
+
+        ?>
+        <input type="text" name="Usuario" placeholder="Usuario" require="" autocomplete="off" value="<?php echo($rowsDocente['Usuario'])?>"><br>
+        <input type="text" name="Password" placeholder="Password" require="" autocomplete="off" value="<?php echo($rowsDocente['Password'])?>"><br>
+        <input type="text" name="Nombre" placeholder="Nombre" require="" autocomplete="off" value="<?php echo($rowsDocente['Nombre'])?>"><br>
+        <input type="text" name="Apellido" placeholder="Apellido" require="" autocomplete="off" value="<?php echo($rowsDocente['Apellido'])?>"><br>
+        <?php
+            }
+        }
+        ?>
+
         <input type="submit" value="REGISTRAR"><br>
     </form>
 

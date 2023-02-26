@@ -9,7 +9,7 @@ if($_POST){
     $login=new Usuarios();
     
     if($login->login($Usuario,$password)){
-        header("Location: ../../Administradores/Pages/index.php");
+        header("Location: ../../Estudiantes/Pages/index.php");
     }else{
         header("Location: ../../index.php");
     }
