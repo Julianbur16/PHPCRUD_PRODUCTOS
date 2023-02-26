@@ -22,9 +22,29 @@ $info_teacher=$modelo_docentes->get();
 
 <body>
     <header>
-        <h1>Docentes en curso</h1>
+    <?php 
+        if($modelouser->validarSessionAdministrador()){
+            ?>
+            <h1>
+            <a href="../../Administradores/Pages/index.php">Administradores</a>
+            <a href="#">Docentes</a>
+            <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
+            <a href="../../Materias/Pages/index.php">Materias</a>
+            <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
+        </h1>
+            <?php
+            }else{
+                ?>
+                <h1>
+                <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
+                <a href="../../Materias/Pages/index.php">Materias</a>
+                <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
+            </h1>
+                <?php
+            }
+        ?>
     </header>
-    <a href="add.php" target="_blank"> Registrar docente</a><br><br>
+    <a href="add.php"> Registrar docente</a><br><br>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -48,8 +68,8 @@ $info_teacher=$modelo_docentes->get();
             <td><?php echo($info_teacher['Apellido'])?></td>
             <td><?php echo($info_teacher['Perfil'])?></td>
             <td>
-                <a href="edit.php? id= <?php echo($info_teacher['ID'])?>" target="_blank">Editar</a><br>
-                <a href="delete.php? id= <?php echo($info_teacher['ID'])?>" target="_blank">Borrar</a>
+                <a href="edit.php? id= <?php echo($info_teacher['ID'])?>" >Editar</a><br>
+                <a href="delete.php? id= <?php echo($info_teacher['ID'])?>" >Borrar</a>
             </td>
         </tr>
         <?php

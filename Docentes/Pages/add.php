@@ -19,7 +19,7 @@ $modelouser->validarSession();
     <title>System notes</title>
 </head>
 <body>
-    <h1>Registrar estudiante</h1>
+    <h1>Registrar docente</h1>
     <form action="../Controladores/add.php" method="POST">
 
         <input type="text" name="Usuario" placeholder="Usuario" require="" autocomplete="off"><br>

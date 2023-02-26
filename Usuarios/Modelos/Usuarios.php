@@ -44,12 +44,20 @@ class Usuarios extends conection{
 
     public function validarSessionAdministrador(){
         if($_SESSION["Id"] != null){
-            if($_SESSION["Perfil" == "Docente"]){
-                header("Location: ../../Estudiantes/Pages/index.php");
+            if($_SESSION["Perfil"] == "Administrador"){
+                return true;
             }else{
-                header("Location: ../../index.php");
+                return false;
             }
         }
+    }
+
+    public function Salir(){
+        $_SESSION["Nombre"]= null;
+        $_SESSION["Id"]= null;
+        $_SESSION["Perfil"]= null;
+        session_destroy();
+        header("Location: ../../index.php");
     }
 }
 
