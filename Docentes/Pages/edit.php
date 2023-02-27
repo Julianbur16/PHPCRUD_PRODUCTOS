@@ -36,9 +36,9 @@ $rowsDocente=$metodo_Docente->getByid($_GET['id']);
             }
         }
         ?>
-
+        <input type="button" value="CANCELAR" id="button_cancelar"><br>
         <input type="submit" value="REGISTRAR"><br>
     </form>
-
+    <script type="text/javascript" src="../../Metodo_redirigir.js"> </script>
 </body>
 </html>

@@ -24,7 +24,9 @@ $metodosestudents->validarSession();
     <P>¿Estas seguro de eliminar el estudiante?</P><br><br>
     <form action="../Controladores/delete.php" method="POST">
         <input type="hidden" name="id" value="<?php echo($_GET['id']) ?>">
+        <input type="button" value="CANCELAR" id="button_cancelar"><br>
         <input type="submit" value="ELIMINAR">
     </form>
+    <script type="text/javascript" src="../../Metodo_redirigir.js"> </script>
 </body>
 </html>

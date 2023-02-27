@@ -82,8 +82,9 @@ $name_sobjects=$newclassteacher_sobject->getmaterias();
             }
         }
         ?>
+        <input type="button" value="CANCELAR" id="button_cancelar"><br>
         <input type="submit" value="GUARDAR"><br>
     </form>
-
+    <script type="text/javascript" src="../../Metodo_redirigir.js"> </script>
 </body>
 </html>

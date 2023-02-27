@@ -57,8 +57,9 @@ $nommaterias=$obj_docentes_materias->getmaterias();
         </select><br>
         <input type="number" name="Promedio" placeholder="Promedio" require="" autocomplete="off"><br>
         <input type="date" name="Fecha" require="" autocomplete="off"><br>
+        <input type="button" value="CANCELAR" id="button_cancelar"><br>
         <input type="submit" value="REGISTRAR"><br>
     </form>
-
+    <script type="text/javascript" src="../../Metodo_redirigir.js"> </script>
 </body>
 </html>
