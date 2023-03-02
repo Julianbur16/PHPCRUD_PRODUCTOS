@@ -21,6 +21,7 @@
         <input type="password" name="Contrasena" Placeholder="Password" required="" autocomplete="off"><br><br>
         <input type="submit" value="INGRESAR"><br><br>
     </form>
+    <script src="Style_pricipal/fondo_transitorio.js"></script>
 </body>
 </html>
 

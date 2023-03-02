@@ -18,6 +18,7 @@ $rowsAdministradores=$metodosadministradores->get();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../Style_Administradores/Styles.css" >
     <title>System notes</title>
 </head>
 
@@ -26,27 +27,41 @@ $rowsAdministradores=$metodosadministradores->get();
         <?php 
         if($validarsession->validarSessionAdministrador()){
             ?>
-            <h1>
-            <a href="#">Administradores</a>
-            <a href="../../Docentes/Pages/index.php">Docentes</a>
-            <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
-            <a href="../../Materias/Pages/index.php">Materias</a>
-            <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
-        </h1>
+            <h3>
+            <div class ="navbar">
+            <div><a href="#" class="status">Administradores</a></div>
+            <div>
+                <ul>
+                <li><a href="../../Docentes/Pages/index.php" class="sections">Docentes</a></li>
+                <li><a href="../../Estudiantes/Pages/index.php" class="sections">Estudiantes</a></li>
+                <li><a href="../../Materias/Pages/index.php" class="sections">Materias</a></li>
+            </ul>
+            </div>
+            <div><a href="../../Usuarios/Controladores/Salir.php" class="salira">Salir</a></div>
+            </div>
+        </h3>
             <?php
             }else{
                 ?>
-                <h1>
-                <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
-                <a href="../../Materias/Pages/index.php">Materias</a>
-                <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
-            </h1>
+                <h3>
+                <div class ="navbar">
+                <div><a href="#" class="status">Administradores</a></div>
+                <div>
+                    <ul>
+                    <li><a href="../../Estudiantes/Pages/index.php" class="sections">Estudiantes</a></li>
+                    <li><a href="../../Materias/Pages/index.php" class="sections">Materias</a></li>
+                    </ul>
+                    </div>
+                    <div><a href="../../Usuarios/Controladores/Salir.php" class="salira">Salir</a></div>
+                    </div>
+                
+            </h3>
                 <?php
             }
         ?>
         
     </header>
-    <a href="add.php"> Registrar administrador</a><br><br>
+    <br><h4><a href="add.php" class= "registrar"> Registrar administrador</a><br></h4><br><br>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -69,8 +84,9 @@ $rowsAdministradores=$metodosadministradores->get();
             <td><?php echo($rowsAdministradores['Apellido'])?></td>
             <td><?php echo($rowsAdministradores['Perfil'])?></td>
             <td>
-                <a href="edit.php? id= <?php echo($rowsAdministradores['ID'])?>" >Editar</a><br>
-                <a href="delete.php? id= <?php echo($rowsAdministradores['ID'])?>" >Borrar</a>
+                <br>
+                <a href="edit.php? id= <?php echo($rowsAdministradores['ID'])?>" class="edit_css">Editar</a>
+                <a href="delete.php? id= <?php echo($rowsAdministradores['ID'])?>" class="delete_css">Borrar</a>
             </td>
         </tr>
 

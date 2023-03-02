@@ -18,34 +18,53 @@ $validarsession->validarSession();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../Style_Estudiantes/Styles.css" >
     <title>System notes</title>
 </head>
 
 <body>
     <header>
+        
     <?php 
         if($validarsession->validarSessionAdministrador()){
             ?>
-            <h1>
-            <a href="../../Administradores/Pages/index.php">Administradores</a>
-            <a href="../../Docentes/Pages/index.php">Docentes</a>
-            <a href="#">Estudiantes</a>
-            <a href="../../Materias/Pages/index.php">Materias</a>
-            <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
-        </h1>
+
+            <h3>
+                <div class ="navbar">
+                <div><a href="#" class="status">Estudiantes</a></div>
+                <div>
+                <ul>
+                    <li><a href="../../Administradores/Pages/index.php" class="sections">Administradores</a></li>
+                    <li><a href="../../Docentes/Pages/index.php" class="sections">Docentes</a></li>
+                    <li><a href="../../Materias/Pages/index.php" class="sections">Materias</a></li>
+                 </ul>
+                 </div>
+                 <div><a href="../../Usuarios/Controladores/Salir.php" class="salira">   Salir   </a></div>
+                 </div>
+                </h3>
+
+       
             <?php
             }else{
                 ?>
-                <h1>
-                <a href="#">Estudiantes</a>
-                <a href="../../Materias/Pages/index.php">Materias</a>
-                <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
-            </h1>
+                <h3>
+                <div class ="navbar">
+                    <div><a href="#" class="status">Estudiantes</a></div>
+                    <div>
+                    <ul>
+                        <li><a href="../../Materias/Pages/index.php" class="sections">Materias</a></li>
+                </ul>
+                </div>
+                <div><a href="../../Usuarios/Controladores/Salir.php" class="salira">Salir</a></div>
+                </div>
+
+            </h3>
                 <?php
             }
         ?>
+        
     </header>
-    <a href="add.php"> Registrar estudiante</a><br><br>
+    <br> <h4>  <a href="add.php" class= "registrar"> Registrar estudiante</a><br></h4><br><br>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -57,7 +76,7 @@ $validarsession->validarSession();
             <th>Docentes</th>
             <th>Promedio</th>
             <th>fecha de ingreso</th>
-            <th>acciones</th>
+            <th> acciones</th>
         </tr>
 
         <?php 
@@ -78,8 +97,9 @@ $validarsession->validarSession();
             <td><?php echo($rows['Promedio']) ?></td>
             <td><?php echo($rows['Fecha']) ?></td>
             <td>
-                <a href="edit.php? id=<?php echo($rows['ID']) ?>" >Editar</a><br>
-                <a href="delete.php? id=<?php echo($rows['ID']) ?>" >Borrar</a>
+                <br>
+                <a href="edit.php? id=<?php echo($rows['ID']) ?>" class="edit_css">Editar</a>
+                <a href="delete.php? id=<?php echo($rows['ID']) ?>" class="delete_css">Borrar</a>
             </td>
         </tr>
 
