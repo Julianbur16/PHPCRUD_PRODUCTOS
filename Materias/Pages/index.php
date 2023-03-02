@@ -19,6 +19,7 @@ $names_materias=$metodosMaterias->get();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../Style_Materias/Styles.css" >
     <title>System notes</title>
 </head>
 
@@ -27,26 +28,38 @@ $names_materias=$metodosMaterias->get();
     <?php 
         if($validarsession->validarSessionAdministrador()){
             ?>
-            <h1>
-            <a href="../../Administradores/Pages/index.php">Administradores</a>
-            <a href="../../Docentes/Pages/index.php">Docentes</a>
-            <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
-            <a href="#">Materias</a>
-            <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
-        </h1>
+            <h3>
+            <div class ="navbar">
+            <div><a href="#" class="status">Materias</a></div>
+            <div>
+                <ul> 
+                <li><a href="../../Administradores/Pages/index.php" class="sections">Administradores</a></li>
+                <li><a href="../../Docentes/Pages/index.php" class="sections">Docentes</a></li>
+                <li><a href="../../Estudiantes/Pages/index.php" class="sections">Estudiantes</a></li>
+            </ul>
+            </div>
+            <div><a href="../../Usuarios/Controladores/Salir.php" class="salira">Salir</a></div>
+            </div>
+        </h3>
             <?php
             }else{
                 ?>
-                <h1>
-                <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
-                <a href="#">Materias</a>
-                <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
-            </h1>
+                <h3>
+                <div class ="navbar">
+                <div><a href="#" class="status">Materias</a></div>
+                <div>
+                    <ul>
+                    <li><a href="../../Estudiantes/Pages/index.php" class="sections">Estudiantes</a></li>
+                </ul>
+                </div>
+                <div><a href="../../Usuarios/Controladores/Salir.php" class="salira">Salir</a></div>
+                </div>
+            </h3>
                 <?php
             }
         ?>
     </header>
-    <a href="add.php" > Registrar materias</a><br><br>
+    <br><h4><a href="add.php" class= "registrar"> Registrar materias</a><br></h4><br><br>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -63,8 +76,9 @@ $names_materias=$metodosMaterias->get();
             <td><?php echo($names_materias['ID'])?></td>
             <td><?php echo($names_materias['Nombre'])?></td>
             <td>
-                <a href="edit.php? id= <?php echo($names_materias['ID'])?>" >Editar</a><br>
-                <a href="delete.php? id= <?php echo($names_materias['ID'])?>" >Borrar</a>
+                <br>
+                <a href="edit.php? id= <?php echo($names_materias['ID'])?>" class="edit_css">Editar</a>
+                <a href="delete.php? id= <?php echo($names_materias['ID'])?>" class="delete_css">Borrar</a>
             </td>
         </tr>
 

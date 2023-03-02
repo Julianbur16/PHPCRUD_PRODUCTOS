@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open sans', sans-serif;
+    color: rgb(150, 150, 150);
+}
+
+body{
+    background-color: black;
+    background-image: url("backgroung.jfif");
+    background-size: cover;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.status{
+    color: white;
+}
+.sections:hover{
+    color: rgb(255, 255, 255);
+}
+
+.salira{
+    color:brown;
+}
+
+.salira:hover{
+    color: red;
+}
+
+.registrar{
+    color: rgb(76, 134, 103);
+}
+
+.registrar:hover{
+    color: rgb(0, 255, 119);
+}
+
+.edit_css{
+    color: rgb(76, 134, 103);
+
+}
+
+.edit_css:hover{
+    color: rgb(0, 255, 119);
+}
+
+.delete_css{
+    color:brown;
+}
+
+.delete_css:hover{
+    color: red;
+}
+header{
+    position: relative;
+    
+    
+}
+
+.navbar{
+    display: flex;
+    font-size: 140%;
+    justify-content: space-between;
+    padding: 3%;
+
+}
+
+ul{
+    display: flex;
+    gap: 2rem;
+}
+
+table{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    font-size: 110%;
+    border-color: rgb(0, 0, 0);
+    border-collapse: collapse;
+
+}
+
+h4{
+    margin-left: 5%;
+    font-size: 130%;
+}
+
+th{
+    color: white;
+}
+td{
+    color: rgb(69, 189, 189);
+}
