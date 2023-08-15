@@ -11,8 +11,7 @@ require_once("../Modelo/Products.php");
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     //entra al controlador relaciona el metodo get
-    //header("Location: ../Controlador/get");
-    echo('si funciona');
+    header("Location: ../Controlador/get");
 
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
