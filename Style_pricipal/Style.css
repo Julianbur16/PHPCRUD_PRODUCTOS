@@ -4,65 +4,16 @@
 }
 
 body{
-    background-image: url("background_pricipal.jpg");
+    background-color: black;
 
 }
 
-header{
-    background: white;
-    margin-left: 40%;
-    margin-right: 40%;
-}
 
-img{
-    
-    margin: auto;
-    margin-top: 30%;
-    padding: 1%;
-    display: block;
-    
-
-}
 
 h1{
-    background: white;
+    background: black;
+    color: white;
     text-align: center;
-    padding: 1%;
-    margin-left: 40%;
-    margin-right: 40%;
+    padding-top: 10%;
     font-style: italic;
 }
-
-form{
-
-    background: white;
-    text-align: center;
-    margin-left: 40%;
-    margin-right: 40%;
-    font-style: italic;
-}
-
-input[type="text"], input[type="password"] {
-    margin-bottom: 5%;
-    background: #dedbdb;
-	width: 80%;
-	font-size: 15px;
-    padding: 5%;
-    color: black;
-    border-color: #dedbdb;
-}
-
-
-input[type="submit"]{
-    background: #6fd8a4;
-    padding: 3%;
-    font-size: 15px;
-    font-family: 'Tourney';
-    padding-left: 15%;
-    padding-right: 15%;
-    border-color: #6fd8a4;
-
-}
-
-
-
