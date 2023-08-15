@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="stylesheet" type="text/css" href="https://phpcrudproductos-production.up.railway.app/Style_pricipal/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/Style_pricipal/style.css">
  
 </head>
 
