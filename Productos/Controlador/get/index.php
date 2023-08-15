@@ -12,18 +12,16 @@
 require_once("../../Modelo/Products.php");
 
 // creación de nuevo objeto de tipo producto
-//$metodosproductos=new Productos;
+$metodosproductos=new Productos;
 
 // llamada del metodo get de la clase estudiante
-//$rows=$metodosproductos->get();
+$rows=$metodosproductos->get();
 
 // codificación de tipo array a json
-//$jsonData = json_encode($rows);
+$jsonData = json_encode($rows);
 
 // asignacion de header y impresión de la informacion
-//header("Content-Type: application/json");
-//echo $jsonData;
-
-echo('si funciona');
+header("Content-Type: application/json");
+echo $jsonData;
 
 ?>
